@@ -1,5 +1,5 @@
 # NASSCOM-VSD-SOC-Design
-## VSD_SOC_Design using OpenLANE paltform and Sky-130nm under the guidance of Director and co-founder of VLSI System Design (VSD) Corp. Pvt. Ltd *Kunal Ghosh*
+## VSD_SOC_Design using OpenLANE paltform and Sky-130nm under the guidance of Director and co-founder of VLSI System Design (VSD) Corp. Pvt. Ltd, *Kunal Ghosh*
 
 ## Table Of Contents
      1.
