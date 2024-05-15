@@ -7,7 +7,7 @@
      
 ## Day 01: Inception of open-source, OpenLANE and Sky130 PDK
 
-     Block Diagram of a Processor board contain modules suuch as SDRAM, I/O ports, SPI, GPIO, I2C, UART, Clock etc. 
+Block Diagram of a Processor board contain modules suuch as SDRAM, I/O ports, SPI, GPIO, I2C, UART, Clock etc. 
 ![Screenshot_20240511_152252_Chrome](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/9f780c9f-e933-45c8-8fd6-3a7638585654)
 
 
