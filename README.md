@@ -2,7 +2,11 @@
 ## VSD_SOC_Design using OpenLANE paltform and Sky-130nm under the guidance of Director and co-founder of VLSI System Design (VSD) Corp. Pvt. Ltd, *Kunal Ghosh*
 
 ## Table Of Contents
-     1.
+     1. Inception of open-source, OpenLane ans sky130 PDK
+     2. Good Floorplan Vs Bad Floorplan and Introduction to Library Cells
+     3. Library cell design using Magic Layout and ngspice characterisation
+     4. Pre-Layout timing analysis and and importance of good clock-tree
+     5. Final Steps for RTL2GDS using TritonRoue and openSTA
 
      
 ## Day 01: Inception of open-source, OpenLANE and Sky130 PDK
