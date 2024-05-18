@@ -63,7 +63,7 @@ prep -design picorv32a
 Now,open a new **Terminal** and open the directory **picorv32a** that contain **runs** folder in it. **runs** directory contain a folder with the date of creation (Fro example: 18-05_06-08) and open *mergef.lef*, *config.tcl* and *cmds.log* files.
 ![image 13](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/0c4f985a-934b-4b74-8963-b6b786cc752a)
 
-#### Synthesis
+### Synthesis
 Open the **OpenLane Prperation Set-Up** back and synthesise using the command,
 ```
 run_synthesis
@@ -79,5 +79,13 @@ Utilization Factor is the total amount of area occupied by *Netlist* in the core
 ![image 8](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/44c9d56c-5438-43bc-80c1-7e4255b6a6fb)
 From above picture,
   Utilization factor = (1613 / 14876) = 0.1084
+
+## DAY 02: Good Floorplan Vs Bad Floorplan and Introduction to Library Cells
+
+### Floorplaning
+Synthesis refers to the process of converting a high-level description of a digital circuit, typically written in a hardware description language (HDL) like Verilog, into a gate-level netlist. This netlist represents the circuit in terms of logic gates and their interconnections.
+
+#### Aspect Ratio
+
 
 ![image 14](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/646d1e20-6043-4fed-8015-7fbd12296bfb)
