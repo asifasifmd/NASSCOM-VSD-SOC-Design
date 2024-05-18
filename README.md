@@ -91,4 +91,28 @@ Synthesis refers to the process of converting a high-level description of a digi
 Aspect Ratio is the ratio of height to the width of netlist.
 <br>
 Aspect ratio = Height of Netlist(W) / Width of Netlist(L)
+<br>
+
+After the *Synthesis* process, run floorplan using the command given,
+```
+run_floorplan
+```
 ![image 14](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/646d1e20-6043-4fed-8015-7fbd12296bfb)
+
+*Floorplan* process taeks some time and after the completion *PDN generation was successful* will appear.
+![image 15](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/c5e750a8-c828-47c5-887e-e065a5f24726)
+
+Open other terminal at different directory levels to see the *VMETAL* and *HMETAL* in different files.
+![image 19](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/5822f045-f0f2-4208-901e-789011582b99)
+
+Open *confir.tcl* file present in *18-05_06-08* using the command given.
+```
+less config.tcl
+```
+![image 17](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/e3699f00-d913-40ca-84cc-0ed8ef3c57ea)
+
+Open *floorplan.tcl* file present in *configuration* using below command,
+```
+less floorplan.tcl
+```
+![image 18](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/d2928454-6ce1-4d7c-ad9f-2c64745b5d3a)
