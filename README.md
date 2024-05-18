@@ -43,7 +43,41 @@ OpenLane is an open-source, end-to-end flow for integrated circuit design. It in
 ### OpenLane ASIC Flow
 ![WhatsApp Image 2024-05-18 at 13 28 49 (1)](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/a6365e75-2334-4443-9d69-d4f56caf9284)
 
-### OpenLane Prepearion Set-Up
+### OpenLane Prepearion Set-Up Steps
+Open the **Terminal** and write the commandes given below
+```
+cd Desktop/work/tools/openlane_working_dir/openlane/
+docker //to enter into bash-4.2
+./flow.tcl -interactive // -interactive for manul operation
+```
+Now, **OpenLane** will appear
+![image 2c](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/96ada520-0468-4bd4-b66a-40b9833cd4bf)
 
-![image 2b](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/65ca5d33-9e6b-4d20-859e-cbf518b144ba)
+```
+package require openlane 0.9
+prep -design picorv32a
+```
+**OpenLane** Preperation is completed
 ![image 2](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/a1e6fc8a-bfe4-48eb-bf2e-9a39ff03ba69)
+
+Now,open a new **Terminal** and open the directory **picorv32a** that contain **runs** folder in it. **runs** directory contain a folder with the date of creation (Fro example: 18-05_06-08) and open *mergef.lef*, *config.tcl* and *cmds.log* files.
+![image 13](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/0c4f985a-934b-4b74-8963-b6b786cc752a)
+
+#### Synthesis
+Open the **OpenLane Prperation Set-Up** back and synthesise using the command,
+```
+run_synthesis
+```
+![image 7](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/79fb2933-a1ee-420a-b433-26a6d181f032)
+
+*Synthesis* process takes some time and after the completion *Synthesis was successful* appears denoting the successful completion of synthesis process.
+![image 14a](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/25ba37b9-7d3f-4400-87fb-c6a95582e256)
+
+#### Utilization Factor
+Utilization Factor is the total amount of area occupied by *Netlist* in the core.
+  Utilization factor = area occupied by Netlist / area of core
+![image 8](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/44c9d56c-5438-43bc-80c1-7e4255b6a6fb)
+From above picture,
+  Utilization factor = (1613 / 14876) = 0.1084
+
+![image 14](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/646d1e20-6043-4fed-8015-7fbd12296bfb)
