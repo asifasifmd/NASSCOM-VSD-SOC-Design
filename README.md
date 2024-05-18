@@ -75,10 +75,12 @@ run_synthesis
 
 #### Utilization Factor
 Utilization Factor is the total amount of area occupied by *Netlist* in the core.
-  Utilization factor = area occupied by Netlist / area of core
+<br>
+Utilization factor = area occupied by Netlist / area of core
 ![image 8](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/44c9d56c-5438-43bc-80c1-7e4255b6a6fb)
 From above picture,
-  Utilization factor = (1613 / 14876) = 0.1084
+<br>
+Utilization factor = (1613 / 14876) = 0.1084
 
 ## DAY 02: Good Floorplan Vs Bad Floorplan and Introduction to Library Cells
 
@@ -86,6 +88,7 @@ From above picture,
 Synthesis refers to the process of converting a high-level description of a digital circuit, typically written in a hardware description language (HDL) like Verilog, into a gate-level netlist. This netlist represents the circuit in terms of logic gates and their interconnections.
 
 #### Aspect Ratio
-
-
+Aspect Ratio is the ratio of height to the width of netlist.
+<br>
+Aspect ratio = Height of Netlist(W) / Width of Netlist(L)
 ![image 14](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/646d1e20-6043-4fed-8015-7fbd12296bfb)
