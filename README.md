@@ -46,7 +46,7 @@ The below shown figure is the Block diagram of a processor consistin of of **Mem
 ![WhatsApp Image 2024-05-18 at 13 28 49 (2)](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/27d75cc3-cbf2-4882-851b-cbcaaae31bc7)
 
 ### OPENLANE
-OpenLane is an open-source, end-to-end flow for integrated circuit design. It integrates multiple tools from the OpenROAD project and other open-source EDA tools to provide a complete suite for RTL-to-GDSII design.
+OpenLane is an open-source, end-to-end flow for integrated circuit design. It was designed to automate many of the steps involved in designing and fabricating integrated circuits. It provides a complete RTL-to-GDSII flow, including synthesis, floorplanning, placement, routing, and verification. It supports multiple foundries and technology nodes, allowing designers to target different manufacturing processes.
 ![WhatsApp Image 2024-05-18 at 13 28 48](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/6394d017-439a-4246-bc35-9e39b9f9b964)
 
 ### OpenLane ASIC Flow
