@@ -127,3 +127,10 @@ From the figure,
 DIEAREA = 660685 * 671405
 <br>
 UNITS DISTANCE = 1000 in Microns
+
+To open the **Magic** write the command,
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
+![image 23](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/cf0e7849-cdc9-4d18-b48f-39a134abbba1)
+
