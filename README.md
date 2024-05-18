@@ -22,9 +22,18 @@ The below shown figure is the Block diagram of a processor consistin of of **Mem
 ![Screenshot_20240511_153034_Chrome](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/9497bdeb-29d4-4383-815e-fc6fbd7b4b4a)
 
 ### Digital AISC Design
-   1. **RTL design**: RTL(Register-Transfer Level) design describes how data moves between registers and how the logical operations are performed on that data.
-   2. **EDA tools** : EDA(Electronic Design Automation) tools are essential for the design, simulation, verification, and manufacturing of electronic systems.
-   3. **PDK data**  : PDK(Process Design Kits) are the collection of files used to model a fabrication process for EDA tools. Process design rules are DRC, LVS and PEX.
+   1. **RTL design**: In the OpenLane flow, RTL (Register-Transfer Level) design tools are used to handle the initial stages of the digital design process, 
+      converting high-level descriptions of a circuit's behavior into a lower-level representation suitable for synthesis and further physical design steps. 
+      OpenLane integrates several open-source tools to facilitate the RTL design, synthesis, and verification stages.Some of the RTL design tools used in OpenLane 
+      are ABC (A System for Sequential Synthesis and Verification), yosys, OpenSTA (Open Source Static Timing Analyzer).
+   2. **EDA tools** : Electronic Design Automation (EDA) tools are software applications used for designing electronic systems such as integrated circuits (ICs), 
+      printed circuit boards (PCBs), and other complex electronic components. These tools facilitate various stages of the design process, from initial concept 
+      and design entry to simulation, verification, and physical implementation. Some EDA tools use in OpenLane are OpenSTA (Open Source Static Timing Analyzer), 
+      Fault (Fault Injection and Analysis), OpenROAD (Open Rapid Analog and Digital), Magic, KLayout, SpefExtractor
+   3. **PDK data**  : A Process Design Kit (PDK) is a comprehensive set of files and documentation provided by semiconductor foundries to facilitate the design 
+      and manufacturing of integrated circuits (ICs). In the context of OpenLane, a PDK contains technology-specific information that enables the tools within the 
+      OpenLane flow to correctly synthesize, place, route, and verify an IC design for a particular manufacturing process. Process design rules are DRC, LVS and 
+      PEX.
 ![WhatsApp Image 2024-05-18 at 13 28 49](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/42c38966-ff62-4c2c-9f5e-43f9303af5d7)
  
 ### RTL to GDS Flow
