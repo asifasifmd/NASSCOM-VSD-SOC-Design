@@ -23,8 +23,16 @@ The below shown figure is the Block diagram of a processor consistin of of **Mem
 
 ### Digital AISC Design
 
-**RTL design**: RTL(Register-Transfer Level) design describes how data moves between registers and how the logical operations are performed on that data.
-**EDA tools**: EDA(Electronic Design Automation) tools are essential for the design, simulation, verification, and manufacturing of electronic systems.
-**PDK data**: PDK(Process Design Kits) are the collection of files used to model a fabrication process for EDA tools. Process design rules are DRC, LVS and PEX.
-![WhatsApp Image 2024-05-18 at 13 28 49](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/6ae7f4ad-b790-4e68-b13c-f299552ceb1a)
+   1. **RTL design**: RTL(Register-Transfer Level) design describes how data moves between registers and how the logical operations are performed on that data.
+   2. **EDA tools** : EDA(Electronic Design Automation) tools are essential for the design, simulation, verification, and manufacturing of electronic systems.
+   3. **PDK data**  : PDK(Process Design Kits) are the collection of files used to model a fabrication process for EDA tools. Process design rules are DRC, LVS and PEX.
+![WhatsApp Image 2024-05-18 at 13 28 49](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/42c38966-ff62-4c2c-9f5e-43f9303af5d7)
  
+### RTL to GDS Flow
+  1. **Synthesis**: Process of converting RTL to a circuit from the components of SCL(Standard Cell Library).
+  2. **Floor/Power Planning**: Its objective is to create required silicon area.
+  3. **Placement**: Process of placing the cells on the floorplan rows laigned with the sits.
+  4. **Clock Tree Synthesis(CTS)**: Main onjective is to create a clock distribution network for synchronized operations.
+  5. **Routing**: Implementing the interconnect using available metal layers.
+  6. **Sign-Off**: Physical (DRC and LVS) and timing (STA) verifications are performed. 
+![WhatsApp Image 2024-05-18 at 13 28 49 (2)](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/27d75cc3-cbf2-4882-851b-cbcaaae31bc7)
