@@ -64,6 +64,8 @@ Now,open a new **Terminal** and open the directory **picorv32a** that contain **
 ![image 13](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/0c4f985a-934b-4b74-8963-b6b786cc752a)
 
 ### Synthesis
+Synthesis refers to the process of converting a high-level description of a digital circuit, typically written in a hardware description language (HDL) like Verilog, into a gate-level netlist. This netlist represents the circuit in terms of logic gates and their interconnections.
+
 Open the **OpenLane Prperation Set-Up** back and synthesise using the command,
 ```
 run_synthesis
@@ -85,7 +87,7 @@ Utilization factor = (1613 / 14876) = 0.1084
 ## DAY 02: Good Floorplan Vs Bad Floorplan and Introduction to Library Cells
 
 ### Floorplaning
-Synthesis refers to the process of converting a high-level description of a digital circuit, typically written in a hardware description language (HDL) like Verilog, into a gate-level netlist. This netlist represents the circuit in terms of logic gates and their interconnections.
+Floorplanning is the process of arranging the major functional blocks of an integrated circuit (IC) within the chip's layout area, optimizing for performance, area, power consumption, and other design constraints.
 
 #### Aspect Ratio
 Aspect Ratio is the ratio of height to the width of netlist.
@@ -133,4 +135,44 @@ To open the **Magic** write the command,
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
 ![image 23](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/cf0e7849-cdc9-4d18-b48f-39a134abbba1)
+Now, *Magic* is opened. Some commands to perform operate the Magic are, 
+  1. To select the layout, press 's' and preee 'v' to set layout at the center of screen.
+  2. To zoom at a particular part, press *Right click* + *Left click* + 'z'. Press 'z' till the required zoom.
+  3. To select an object in layout, keep the cursor on object and press 's'.
 
+Logic View after certain magnification.
+![image 26](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/9ab1789d-8577-4d3b-a102-90b3e206741f)
+
+To see the information about a component in logic, put cursor on component and press 's to select the component. Now, go to *tkcon 2.4 main* window and give **what** command.
+![image 28](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/1dc7d95c-e272-4523-abd1-8dd48f93141e)
+![image 29](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/6743cabd-4081-452a-8c22-95597f941dc3)
+
+### Placement
+Placement refers to the process of positioning the standard cells and macros (large functional blocks) within the defined core area of the chip layout.
+
+Go to **OpenLane Preperation Set-Up** terminal and run placement using the command given,
+```
+run_placement
+```
+![image 31](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/98d27307-edf3-43bb-b293-44e401cd588f)
+
+*Placement* process take some time and *Screenshot taken* will appear after completion.
+![image 34](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/33ff798d-7115-48f0-b555-da7dda59b3f8)
+Placement process also gives the information about *utilization area* and *padded utilization area*
+<br>
+**utilization** - 36%
+<br>
+**utilization padded** - 55%
+
+Open the other **Terminal** now, and open **Magic** for Placement using given command,
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
+![image 35](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/974e7a50-86b7-4810-a0b2-b8726d2d1916)
+
+*Magic* is opened now.
+![image 36](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/83c8cc08-0fba-4248-a1d4-8778f08b24bd)
+
+Magnified images of Magic logic.
+![image 39](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/b9623588-5bd3-48cb-b389-84115e288d87)
+![image 40](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/e76fc921-e096-4886-8af2-310a68086599)
