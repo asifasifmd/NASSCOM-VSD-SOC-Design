@@ -152,6 +152,7 @@ Now, *Magic* is opened. Some commands to perform operate the Magic are,
   1. To select the layout, press 's' and preee 'v' to set layout at the center of screen.
   2. To zoom at a particular part, press *Right click* + *Left click* + 'z'. Press 'z' till the required zoom.
   3. To select an object in layout, keep the cursor on object and press 's'.
+![image 24a](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/4b612dd1-d4fe-4be6-91bc-f6bae2e25448)
 
 Logic View after certain magnification.
 ![image 26](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/9ab1789d-8577-4d3b-a102-90b3e206741f)
