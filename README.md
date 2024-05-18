@@ -148,7 +148,9 @@ To open the **Magic** write the command,
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
 ![image 23](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/cf0e7849-cdc9-4d18-b48f-39a134abbba1)
-Now, *Magic* is opened. Some commands to perform operate the Magic are, 
+Now, *Magic* is opened.
+
+Some commands to perform operate the Magic are, 
   1. To select the layout, press 's' and preee 'v' to set layout at the center of screen.
   2. To zoom at a particular part, press *Right click* + *Left click* + 'z'. Press 'z' till the required zoom.
   3. To select an object in layout, keep the cursor on object and press 's'.
