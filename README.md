@@ -103,7 +103,7 @@ run_floorplan
 ![image 15](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/c5e750a8-c828-47c5-887e-e065a5f24726)
 
 Open other terminal at different directory levels to see the *VMETAL* and *HMETAL* in different files.
-![image 19](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/5822f045-f0f2-4208-901e-789011582b99)
+![image 21](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/299461ac-0ee3-49cb-83d2-5789fc20977e)
 
 Open *confir.tcl* file present in *18-05_06-08* using the command given.
 ```
@@ -116,3 +116,14 @@ Open *floorplan.tcl* file present in *configuration* using below command,
 less floorplan.tcl
 ```
 ![image 18](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/d2928454-6ce1-4d7c-ad9f-2c64745b5d3a)
+
+Open *4-ioplacer.def* file present in *floorplan* to see the total DIE area using command,
+```
+less 4-ioplacer.def
+```
+![image 20](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/fcf68a2b-8b93-467b-bad4-844d338c98d3)
+From the figure,
+<br>
+DIEAREA = 660685 * 671405
+<br>
+UNITS DISTANCE = 1000 in Microns
