@@ -14,6 +14,8 @@ The below shown figure is the Block diagram of a processor consistin of of **Mem
 ![Screenshot_20240511_152252_Chrome](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/54de3256-48a5-4192-8c82-1decdda1193d)
 
 Important components of chip in a packge are-
-   1. **Pads**: It is used to sent signals inside and outside of the chip.
-   2. 
+   1. **Pads**: It is used to sent signals inside and outside of the chip and executes the instructions.
+   2. **Core**: It is a place where all digital logics are present.
+   3. **Die** : It is place that contain the ICs.
 ![Screenshot_20240511_153034_Chrome](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/9497bdeb-29d4-4383-815e-fc6fbd7b4b4a)
+
