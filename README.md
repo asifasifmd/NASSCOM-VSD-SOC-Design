@@ -621,6 +621,10 @@ echo $::env(CTS_CLK_BUFFER_LIST)
 ![image 57](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/d0f39300-b6ea-4e66-bfed-197d3788b3f0)
 <br>
 
+## DAY 05: Final Steps for RTL2GDS using TritonRoue and openSTA
+
+### Power Distribution Network process
+
 Now, run the final step i.e, PDN (Power Distribution Network) using given command,
 ```
 run_pdn
@@ -636,6 +640,8 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ![image 63](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/a0ba1e92-9d86-4c64-874e-1a8b699da80a)
 ![image 64](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/2b35c7b7-74c7-43b0-89b3-15ecfcf5b7b3)
 <br>
+
+### Routing process
 
 Now, run the **Routing** process using command provided,
 ```
