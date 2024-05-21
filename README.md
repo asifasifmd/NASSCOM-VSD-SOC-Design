@@ -337,9 +337,9 @@ load nwell
 Correctd *nwell types* using **DRC rule book**
 ![image 97](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/07b83d4f-3084-4bbd-9161-8a3ba7cf98db)
 
-## DAY 02: Pre-Layout timing analysis and and importance of good clock-tree
+## DAY 04: Pre-Layout timing analysis and and importance of good clock-tree
 
-### Namin of Pins of Inverter in Magic
+### Naming of Pins of Inverter in Magic
 
 Open the **Magic** using the command provided from *vsdstdcelldesign* file git cloned before,
 ```
@@ -372,6 +372,8 @@ less sky130_vsdinv.lef
 ```
 ![image 7](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/2c6c5aa3-58f7-49e1-bf15-bd8606ab708b)
 <br>
+
+### Attaching of Different file configurations to the OpenLane Set_up
 
 Use the command given to open the **sky130_fd_sc_hd__typical.lib** file present in *libs* file.
 ```
@@ -407,6 +409,8 @@ Open **config.tcl** file using the command given and edit the file as per the re
 <br>
 ![image 13](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/d222f4ea-72ce-4dd4-8683-86ad8e21d28a)
 <br>
+
+### OpenLane Set-Up for new cell configurations  
 
 Open a new file and the *OpenLane* in it using the commands provided,
 ```
@@ -501,3 +505,48 @@ Now, **Magic** is open.
 ![image 32](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/5311d80d-7c34-4660-8bd9-2540c02b0488)
 <br>
 
+### New Set_Up for reduced time-delay
+
+Open **my_base.sdc** and **base.sdc** using provides commands and do required change for set-up.
+```
+vim my_base.sdc
+vim base.sdc
+```
+![image 36](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/4f9ae81e-b47b-4b3d-a2a7-13f53977a6fb)
+![image 37](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/fb6701ab-0dfe-48dd-a2b6-47756a7c0fd7)
+![image 35](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/af1cfd51-9285-4053-aa75-09cb6e32418b)
+<br>
+
+Now, open **pre_sta.conf** file using command provided,
+```
+vim pre_sta.conf
+```
+![image 34](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/c3612fe5-107a-4d8c-b0ad-ae23895db96d)
+<br>
+
+Now, run **pre_sta.comf** file using given command,
+```
+sta pre_sta.conf
+```
+![image 38](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/1b1baec5-c0b6-45d3-bb62-a7fdb1eb66a7)
+<br>
+
+After successful completion we can see that tns = -711.5,  wns = -23.89 and time = -23.89
+![image 39](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/236184ba-633d-464f-9dfa-b8d601728eaa)
+<br>
+
+Now,run below commands to reduce the *Time* of the cell design
+```
+report_net -connections _10566_
+replace_cell _13165_ sky130_fd_cs_hd__or3_4
+report_checks -fields {net cap slew input_pins} -digits 4
+```
+
+and to reduce the time more, run the commands given,
+```
+report_net -connection _10916_
+replace_cell _13165_ sky130_fd_cs_hd__or3_4
+report_checks -fields {net cap slew input_pins} -digits 5
+```
+![image 41](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/e68a38f0-3bab-421e-a979-379d275ff161)
+<br>
