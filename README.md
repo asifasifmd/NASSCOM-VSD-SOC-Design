@@ -202,8 +202,8 @@ Do git clone using
 ```
 git clone https://github.com/nickson-josevsdstdcelldesign.git
 ```
-
 <br>
+
 and open *SPICE* using command
 ```
 magic -T sky130A.tech sky130__inv.mag &
@@ -218,6 +218,7 @@ Now the Spice design of Inverter is opened.
 <br>
 Use below commands to link SPICE model to Openlane
 ```
+extract all
 ext2spice cthresh 0 rthresh 0
 ext2spice
 ```
@@ -295,4 +296,42 @@ magic -d XR
 <br>
 
 Now, the **Magic** file is opened.
+![image 82](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/2063657e-a5fa-4354-850a-fec12f5a7edb)
+<br>
 
+Use given command in **TKcon.tcl**to load the files,
+```
+load poly
+```
+![image 83](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/23f9c1ba-1904-48ce-8f6f-c73e5c7edbb6)
+<br>
+
+Cell components created using poly, nwell, and p-well.
+![image 87](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/0d435e3f-a0d3-4193-af48-a9d2ad4c6baf)
+<br>
+
+Commands are used in **TKcon.tcl** to run the **Magic** file and to run **DRC Check** are given,
+```
+tech load sky130A.tech
+drc check
+drc why
+load nwell
+cif ostyle drc
+cif see dnwell shrink
+cif see dnwell_missing
+feed clear
+drc style drc(full)
+```
+![image 91](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/00025eca-9a88-4568-8826-851070ed11a1)
+<br>
+
+To load *n-well types* use command,
+```
+load nwell
+```
+*Incorrect* implementation of the nweel.6 type is depicted,
+![image 96](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/368f4b14-bb9f-48c6-ad14-aed2f303966c)
+<br>
+
+Correctd *nwell types* using **DRC rule book**
+![image 97](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/07b83d4f-3084-4bbd-9161-8a3ba7cf98db)
