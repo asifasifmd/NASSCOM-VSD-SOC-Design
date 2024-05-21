@@ -256,7 +256,6 @@ Since, VDD is 3.3V, we take 0.66V (20%) and 2.64V (80%) of it.
 From Graph, the rise time is-
 <br>
 Rise Time = (2.20593e-09 - 2.16547e-09) = 40.46ps
-
 <br>
 
 #### Fall Time Calculation
@@ -267,7 +266,6 @@ Rise Time = (2.20593e-09 - 2.16547e-09) = 40.46ps
 From graph, the fall time is-
 <br>
 Fall Time = (4.6689e-09 - 4.04092e-09) = 27.48ps
-
 <br>
 
 #### Propagation Delay
@@ -277,3 +275,7 @@ Fall Time = (4.6689e-09 - 4.04092e-09) = 27.48ps
 From graph, 50% of VDD is 1.65V.
 <br>
 Propagation Delay = (2.18645e-09 - 2.15004e-09) = 36.41ps
+<br>
+
+The values obtained from graph are,
+![image 79](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/f69073c9-25d4-42bf-8a7a-d45ba8f590d6)
