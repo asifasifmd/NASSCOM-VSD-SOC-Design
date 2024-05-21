@@ -330,7 +330,7 @@ To load *n-well types* use command,
 ```
 load nwell
 ```
-*Incorrect* implementation of the nweel.6 type is depicted,
+*Incorrect* implementation of the nweel.4 type is depicted,
 ![image 96](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/368f4b14-bb9f-48c6-ad14-aed2f303966c)
 <br>
 
