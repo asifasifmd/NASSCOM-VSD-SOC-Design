@@ -249,6 +249,7 @@ From Graph, the rise time is-
 Rise Time = (2.20593e-09 - 2.16547e-09) = 40.46ps
 
 <br>
+
 #### Fall Time Calculation
 **Fall Time**: It is calculated from 80% to 20% of the output graph.
 <br>
@@ -259,6 +260,7 @@ From graph, the fall time is-
 Fall Time = (4.6689e-09 - 4.04092e-09) = 27.48ps
 
 <br>
+
 #### Propagation Delay
 **Propagation Delay**: It is the time taken by the output singal to change its state when the input signal change its state. It is generally calculated at 50% state change from input to output.
 <br>
