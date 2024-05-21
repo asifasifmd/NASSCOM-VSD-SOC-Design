@@ -252,30 +252,31 @@ The graph obtained is,
 <br>
 
 #### Rise Time Calculation
+![image 67](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/0be22bc5-88ea-4d82-aaec-53710183e16d)
+![image 69](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/5e1996fd-1aaa-473e-b437-8cf54d030250)
 **Rise Time**: It is calculated from 20% and 80% of the output graph.
 <br>
 Since, VDD is 3.3V, we take 0.66V (20%) and 2.64V (80%) of it.
-![image 67](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/0be22bc5-88ea-4d82-aaec-53710183e16d)
-![image 69](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/5e1996fd-1aaa-473e-b437-8cf54d030250)
+<br>
 From Graph, the rise time is-
 <br>
 Rise Time = (2.20593e-09 - 2.16547e-09) = 40.46ps
 <br>
 
 #### Fall Time Calculation
-**Fall Time**: It is calculated from 80% to 20% of the output graph.
-<br>
 ![image 75](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/acb2a8b8-c768-4d73-9354-9d9e99a3f0e9)
 ![image 77](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/62d33e1c-32d1-4f17-aec9-beeaa764e79b)
+**Fall Time**: It is calculated from 80% to 20% of the output graph.
+<br>
 From graph, the fall time is-
 <br>
 Fall Time = (4.6689e-09 - 4.04092e-09) = 27.48ps
 <br>
 
 #### Propagation Delay
+![image 72](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/8ace525f-4ef2-41a4-91d8-e20669e32b72)
 **Propagation Delay**: It is the time taken by the output singal to change its state when the input signal change its state. It is generally calculated at 50% state change from input to output.
 <br>
-![image 72](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/8ace525f-4ef2-41a4-91d8-e20669e32b72)
 From graph, 50% of VDD is 1.65V.
 <br>
 Propagation Delay = (2.18645e-09 - 2.15004e-09) = 36.41ps
