@@ -227,8 +227,36 @@ vim sky130_inv.ngspice
 The spice code is given,
 ![image 58](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/ad1e2294-4545-4da8-b2b5-cf7a52605fcb)
 <br>
-To see the **Transient Analysis Graph** of the Inverter use command,
+To see the **Transient Analysis Graph** of the Inverter use command and to plot the graph, command is-
 ```
 ngspice sky130_inv.spice
+plot y vs time a
 ```
 ![image 62](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/e7317cb7-0bf7-4eaf-bfa5-39441885c9b9)
+<br>
+The graph obtained is,
+![image 61](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/aca9ca89-110b-4f05-bc16-79c069888e09)
+<br>
+#### Rise Time Calculation
+**Rise Time**: It is calculated from 20% and 80% of the output graph.
+<br>
+Since, VDD is 3.3V, we take 0.66V (20%) and 2.64V (80%) of it.
+![image 67](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/0be22bc5-88ea-4d82-aaec-53710183e16d)
+![image 69](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/5e1996fd-1aaa-473e-b437-8cf54d030250)
+From Graph, the rise time is-
+Rise Time = (2.20593e-09 - 2.16547e-09) = 40.46ps
+<br>
+#### Fall Time Calculation
+**Fall Time**: It is calculated from 80% to 20% of the output graph.
+<br>
+
+![image 77](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/62d33e1c-32d1-4f17-aec9-beeaa764e79b)
+From graph, the fall time is-
+Fall Time = (4.6689e-09 - 4.04092e-09) = 27.48ps
+<br>
+#### Propagation Delay
+**Propagation Delay**: It is the time taken by the output singal to change its state when the input signal change its state. It is generally calculated at 50% state change from input to output.
+<br>
+![image 72](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/8ace525f-4ef2-41a4-91d8-e20669e32b72)
+From graph, 50% of VDD is 1.65V.
+Propagation Delay = (2.18645e-09 - 2.15004e-09) = 36.41ps
