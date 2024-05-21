@@ -194,17 +194,23 @@ Magnified images of Magic logic.
 ![image 40](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/e76fc921-e096-4886-8af2-310a68086599)
 
 ### CMOS inverter creation in SPICE deck
+
 Do git clone using
 ```
 git clone https://github.com/nickson-josevsdstdcelldesign.git
 ```
+
+<br>
 and open *SPICE* using command
 ```
 magic -T sky130A.tech sky130__inv.mag &
 ```
+
 ![image 41](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/3ff12934-42ca-4071-bf39-7372e0b283bc)
+
 <br>
 Now the Spice design of Inverter is opened.
+
 ![image 45](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/d21c47bd-3ed5-4d0b-ac7f-52787c97a169)
 <br>
 Use below commands to link SPICE model to Openlane
@@ -212,6 +218,7 @@ Use below commands to link SPICE model to Openlane
 ext2spice cthresh 0 rthresh 0
 ext2spice
 ```
+
 ![image 48a](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/98afb0fc-0747-42be-8bb2-6eb2d1ad0f49)
 <br>
 Use below commands to install **ngspice**
@@ -224,6 +231,7 @@ vim sky130_inv.ngspice
 ```
 ![image 57](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/b43783c0-825f-4cec-bcce-5bc3f94676fd)
 <br>
+
 The spice code is given,
 ![image 58](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/ad1e2294-4545-4da8-b2b5-cf7a52605fcb)
 <br>
@@ -234,6 +242,7 @@ plot y vs time a
 ```
 ![image 62](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/e7317cb7-0bf7-4eaf-bfa5-39441885c9b9)
 <br>
+
 The graph obtained is,
 ![image 61](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/aca9ca89-110b-4f05-bc16-79c069888e09)
 <br>
