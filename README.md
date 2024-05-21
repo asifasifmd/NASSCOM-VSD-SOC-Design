@@ -192,6 +192,9 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 Magnified images of Magic logic.
 ![image 39](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/b9623588-5bd3-48cb-b389-84115e288d87)
 ![image 40](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/e76fc921-e096-4886-8af2-310a68086599)
+<br>
+
+## DAY 03: Library cell design using Magic Layout and ngspice characterisation
 
 ### CMOS inverter creation in SPICE deck
 
@@ -279,3 +282,17 @@ Propagation Delay = (2.18645e-09 - 2.15004e-09) = 36.41ps
 
 The values obtained from graph are,
 ![image 79](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/f69073c9-25d4-42bf-8a7a-d45ba8f590d6)
+<br>
+
+#### Poly.9 correction
+
+Use the below commands to  intake the different cell-parts  such as poly.9, n-well, etc. into OpenLane and to open the magic file.
+```
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.dgz
+magic -d XR
+```
+![image 81](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/68a72c51-3041-4279-b039-b54214d5b321)
+<br>
+
+Now, the **Magic** file is opened.
+
