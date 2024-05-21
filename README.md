@@ -60,8 +60,8 @@ OpenLane is an open-source, end-to-end flow for integrated circuit design. It wa
 Open the **Terminal** and write the commandes given below
 ```
 cd Desktop/work/tools/openlane_working_dir/openlane/
-docker //to enter into bash-4.2
-./flow.tcl -interactive // -interactive for manul operation
+docker   //to enter into bash-4.2
+./flow.tcl -interactive   // -interactive for manual operation
 ```
 Now, **OpenLane** will appear
 ![image 2c](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/96ada520-0468-4bd4-b66a-40b9833cd4bf)
@@ -406,5 +406,98 @@ Open **config.tcl** file using the command given and edit the file as per the re
 **(Press INSERT button to enable editing of file and press esc + : w + q + ! to come out of the file)**
 <br>
 ![image 13](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/d222f4ea-72ce-4dd4-8683-86ad8e21d28a)
+<br>
+
+Open a new file and the *OpenLane* in it using the commands provided,
+```
+docker
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
+```
+![image 14](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/c5f296f7-2410-4d5e-8463-06014cae1e7b)
+<br>
+
+Use the commands given to run the synthesis process.
+```
+set lefs [glob $::env(DESIGN_DIR))/src/*.lef]
+add_lefs -src $lefs
+run_synthesis
+```
+![image 15](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/ae66c8bb-a963-4a52-a494-c60edfaaae9d)
+<br>
+
+*Synthesis* process will complete in sometime.
+<br>
+![image 17](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/fe29d8e0-a599-49b7-b427-1b641db8a007)
+From above pictures, 
+<br>
+Area of picorv32a chip = 147712.918400
+<br>
+We can see that, **sky130_vsdinv** = 1554 is present in *synthesis* process.
+<br>
+
+After the completion of *Synthesis* process, we are given with **tns** **wns** values.
+![image 16](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/639e2670-c2d8-4251-bc55-e6810800244d)
+<br>
+
+Write the commands given below and run the *Synthesis* process again,
+```
+echo $::env(SYNTH_STRATEGY)
+set ::env(SYNTH_STRATEGY)
+ech0 $::env(SYNTH_BUFFERING)
+echo $::env(SYNTH_SIZING)
+set ::env(SYNTH_SIZING)
+echo $::env(SYNTH_SIZING)
+```
+```
+run_synthesis
+```
+![image 22](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/0c3e15c0-03e9-4ba2-93f3-3ea08aad3ff5)
+<br>
+*Synthesis* will will complete in time.
+<br>
+
+Now, run the floorplan using the command given,
+```
+run_floorplan
+```
+![image 23](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/e017e96f-2238-457e-8b88-41b74791a398)
+<br>
+
+If error arises in *floorplan* execution use the below commands,
+```
+init_floorplan
+place_io
+tap_decap_or
+```
+![image 25](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/0173aa41-ab28-4242-be05-7b2220843d1e)
+<br>
+
+Now, run the placement execution using command provided,
+```
+run_placement
+```
+![image 26](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/14357d68-a725-4d14-b761-fd450c600208)
+<br>
+*Placement* will complete in sometime.
+
+Now, go to other **Terminal** and run command given to open the **Magic**,
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
+![image 33](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/0f806937-3daf-41a8-9887-cc8f2be7923a)
+<br>
+
+Now, **Magic** is open.
+<br>
+  1. Zoom-in the cell by presasing 'z' to required size.
+  2. Select a *picorv32a* cell area.
+  3. Go to **TKcon.tcl** Terminal and run given command and **sky130_vsdinv** cell will appear.
+     ```
+     expand
+     ```
+![image 30](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/92824536-f3b0-4b5e-9242-b48170d60ae0)
+![image 32](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/5311d80d-7c34-4660-8bd9-2540c02b0488)
 <br>
 
