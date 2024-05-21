@@ -336,3 +336,75 @@ load nwell
 
 Correctd *nwell types* using **DRC rule book**
 ![image 97](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/07b83d4f-3084-4bbd-9161-8a3ba7cf98db)
+
+## DAY 02: Pre-Layout timing analysis and and importance of good clock-tree
+
+### Namin of Pins of Inverter in Magic
+
+Open the **Magic** using the command provided from *vsdstdcelldesign* file git cloned before,
+```
+magic -T sky130A.tech sky130_inv.mag &
+```
+Now, Inverter design is opened.
+Use, the command given to fix the grid dimensions of Inverter in the cell.
+```
+grid 0.46um 0.34um 0.23um 0.12um
+```
+![image 2](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/a1b88512-b497-42f3-97c4-6968359013ee)
+<br>
+
+Click on *edit* option and go to *Texthelper* to put custon name for pins.
+![image 3](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/3e29bc2d-0d8a-4977-b119-ee3170d57130)
+<br>
+
+Use given commands to know the function of specified pins,
+```
+port class input
+port class power --> (power for VPWR)
+what
+```
+![image 5](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/979accca-c1d2-4391-a77b-fdd00993bdb3)
+<br>
+
+Use command to open **sky130_vsdinv.lef** file in *vsdstdcelldesign* file to see complete information about each specified pin,
+```
+less sky130_vsdinv.lef
+```
+![image 7](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/2c6c5aa3-58f7-49e1-bf15-bd8606ab708b)
+<br>
+
+Use the command given to open the **sky130_fd_sc_hd__typical.lib** file present in *libs* file.
+```
+less sky130_fd_sc_hd__typical.lib
+```
+*Typical* file operates at a voltage of 1.80
+<br>
+![image 8](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/48b07e51-16c9-489b-83c9-9e520f9afe6b)
+<br>
+
+Use the command given to open the **sky130_fd_sc_hd__slow.lib** file present in *libs* file.
+```
+less sky130_fd_sc_hd__slow.lib
+```
+*slow* file operates at a voltage of 1.80V
+<br>
+![image 9](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/dd38db00-6fbc-4b0b-a1c4-2e6b5503e5e6)
+<br>
+
+
+Use the command given to open the **sky130_fd_sc_hd__fast.lib** file present in *libs* file.
+```
+less sky130_fd_sc_hd__fast.lib
+```
+*fast* file operates at a voltage of 1.95V
+<br>
+![image 10](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/7323773e-a9b5-472c-a24d-25e0355c17bf)
+<br>
+
+Open **config.tcl** file using the command given and edit the file as per the requirement
+<br>
+**(Press INSERT button to enable editing of file and press esc + : w + q + ! to come out of the file)**
+<br>
+![image 13](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/d222f4ea-72ce-4dd4-8683-86ad8e21d28a)
+<br>
+
