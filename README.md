@@ -550,3 +550,112 @@ report_checks -fields {net cap slew input_pins} -digits 5
 ```
 ![image 41](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/e68a38f0-3bab-421e-a979-379d275ff161)
 <br>
+
+Again, open **OpenLane** set-up and do complete the **Preperation**
+<br>
+Now, run the commande given and complete the *Synthesis process*,
+```
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+set ::env(SYNTH_SIZING) 1
+run_synthesis
+```
+![image 47](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/7ba9c497-07ff-4de5-804c-3c298cbac409)
+<br>
+
+Now, run the **Clock Tree Synthesis** process using the command given,
+```
+run_cts
+```
+![image 48](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/12ba970f-1eef-45f0-9f09-e8ee0149f9f4)
+<br>
+
+Now, use given commands to run openroad,
+```
+openroad
+read_lef /openLANE_flow/designs/picorv32a/runs/21-05_04-02/tmp/merged.lef
+read_def /openLANE_flow/designs/picorv32a/runs/21-05_04-02/results/cts/picorv32a.cts.def
+write_db pico_cts.db
+read_db pico_cts.db
+read_verilog /openLANE_flow/designs/picorv32a/runs/21-05_04-02/results/synthesis/picorv32a.synthesis_cts.v
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+link_design picorv32a
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+set_propagated_clock [all_clocks]
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+```
+![image 53](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/6e1c2a3c-1d5a-4597-a758-d2cf6f5b5df0)
+![image 54](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/699ec62f-6283-44cd-b53f-37a7b8153cf9)
+![image 52](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/9ede59b8-bfef-434f-b295-3e981f5c7605)
+<br>
+
+After CTS, reduce the Buffer sizes using commands given,
+```
+set ::env(CTS_CLK_BUFFER_LIST) [lreplace $::env(CTS_CLK_BUFFER_LIST) 0 0]
+set ::env(CURRENT_DEF) /openLANE_flow/designs/picorv32a/runs/21-05_04-02/results/placement/picorv32a.placement.def
+run_cts
+```
+![image 55](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/c99e9a6e-aa6f-4ffe-aecd-369753bc1d40)
+<br>
+
+Now, run the openroad process again using the commands given,
+```
+openroad
+read_lef /openLANE_flow/designs/picorv32a/runs/05-05_10-43/tmp/merged.lef
+read_def /openLANE_flow/designs/picorv32a/runs/05-05_10-43/results/cts/picorv32a.cts.def
+write_db pico_cts1.db
+read_db pico_cts1.db
+read_verilog /openLANE_flow/designs/picorv32a/runs/05-05_10-43/results/synthesis/picorv32a.synthesis_cts.v
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+link_design picorv32a
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+set_propagated_clock [all_clocks]
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+
+echo $::env(CTS_CLK_BUFFER_LIST)
+set ::env(CTS_CLK_BUFFER_LIST) [linsert $::env(CTS_CLK_BUFFER_LIST) 0 sky130_fd_sc_hd__clkbuf_1]
+echo $::env(CTS_CLK_BUFFER_LIST)
+```
+![image 56](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/47323fe4-d450-483c-911b-866b3f0f8fcb)
+![image 57](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/d0f39300-b6ea-4e66-bfed-197d3788b3f0)
+<br>
+
+Now, run the final step i.e, PDN (Power Distribution Network) using given command,
+```
+run_pdn
+```
+It will take time, and complete the PDN process.
+![image 58](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/228253a0-49a6-4d89-8f86-293e00ff16fb)
+<br>
+
+Now, go to other **Terminal** and use given command to run PDN process in **Magic**
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read 34-pdn.def &
+```
+![image 63](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/a0ba1e92-9d86-4c64-874e-1a8b699da80a)
+![image 64](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/2b35c7b7-74c7-43b0-89b3-15ecfcf5b7b3)
+<br>
+
+Now, run the **Routing** process using command provided,
+```
+run_routing
+```
+![image 59](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/59cba0a2-44d0-459e-b7df-3e90cc3071b1)
+![image 60](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/c25c9ec5-e0e2-4e9d-af0a-598253360f63)
+![image 61](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/714425c3-bace-41bd-978b-72641bfb91ff)
+![image 62](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/ba0e28b4-f604-42b2-81e0-57b3e93b94da)
+<br>
+
+After routing process completion, go to other **Terminal** and run the **Routing** processes using the command given to open in **Magic**
+
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.def &
+```
+![image 65](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/dc912336-1985-4c78-8d8e-4aa4ee7dcb2c)
+![image 67](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/629f68f2-03ef-4f62-9fe0-acb1e908a02b)
+![image 68](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/1a7bf98f-5028-4266-8a72-eb26b7a42f48)
+![image 69](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/e6222d7d-29e5-4256-bf85-d9d6013e9946)
+![image 70](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/25607e92-e6d6-444a-a5b9-d8a1a8a1a9fa)
+![image 71](https://github.com/asifasifmd/NASSCOM-VSD-SOC-Design/assets/154309294/3fee9ce7-9e75-4916-93d4-84b246ce1643)
+<br>
